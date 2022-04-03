@@ -17,3 +17,7 @@ npm install --save @nestjs/typeorm typeorm@0.2 mysql2
 ## mysql は mysql2 を利用することで
 
 認証プラグインが【caching_sha2_password】に変更されたため対応
+
+## graphql のセットアップ
+
+npm i @nestjs/graphql graphql-tools apollo-server-express graphql

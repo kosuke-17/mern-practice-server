@@ -6,6 +6,7 @@ import { Connection } from 'typeorm';
   imports: [TypeOrmModule.forRoot()],
   exports: [TypeOrmModule],
 })
+// DBに接続されたかの確認を行う処理
 export class DatabaseModule {
   constructor(connection: Connection) {
     if (connection.isConnected) {
