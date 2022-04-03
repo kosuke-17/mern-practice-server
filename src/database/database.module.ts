@@ -1,10 +1,15 @@
 import { Module } from '@nestjs/common';
-// import {Type}
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Connection } from 'typeorm';
 
 @Module({
-  imports: [],
-  exports: [],
+  imports: [TypeOrmModule.forRoot()],
+  exports: [TypeOrmModule],
 })
 export class DatabaseModule {
-  // constructor(private connection: Connection);
+  constructor(connection: Connection) {
+    if (connection.isConnected) {
+      console.log('DBに接続成功');
+    }
+  }
 }
