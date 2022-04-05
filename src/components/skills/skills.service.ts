@@ -23,9 +23,13 @@ export class SkillsService {
 
   public async addSkill(newSkillData: NewSkillInput): Promise<Skill> {
     const newSkill = this.skillRepository.create(newSkillData);
-    await this.skillRepository.save(newSkill).catch(() => {
-      new InternalServerErrorException();
-    });
+
+    try {
+      await this.skillRepository.save(newSkill);
+    } catch (error) {
+      throw error;
+    }
+
     return newSkill;
   }
 }

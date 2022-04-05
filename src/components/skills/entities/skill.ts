@@ -7,7 +7,7 @@ import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 export class Skill {
   @PrimaryGeneratedColumn('uuid')
   @Field()
-  id: number;
+  id: string;
 
   @Column()
   @Field()

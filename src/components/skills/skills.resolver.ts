@@ -16,7 +16,7 @@ export class SkillsResolver {
     });
   }
   @Mutation(() => Skill)
-  public async addNewCar(
+  public async addNewSkill(
     @Args('newSkillData') newSkillDdata: NewSkillInput,
   ): Promise<Skill> {
     return await this.skillsService.addSkill(newSkillDdata).catch((err) => {
